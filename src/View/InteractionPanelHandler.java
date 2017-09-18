@@ -38,6 +38,7 @@ public class InteractionPanelHandler {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO Verhalten bei Knopfdruck implementieren!
+                mainController.getAnswer(serverIP.getText(),serverPort.getText());
             }
         });
     }

@@ -21,6 +21,7 @@ public class MainProgram {
     private static void setup(){
         MainController mainController = new MainController();
         MainFrame mainFrame = new MainFrame(mainController, "DayTime-Client",50,50,1000,600);
+        mainController.setPanelHandler(mainFrame.getInteractionPanelHandler());
     }
 
 }

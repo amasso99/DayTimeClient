@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
     // Referenzen
     private MainController mainController;
 
-    private JPanel interactionPanel;
+    private InteractionPanelHandler interactionPanel;
 
     /**
      * Konstruktor
@@ -27,9 +27,9 @@ public class MainFrame extends JFrame {
     public MainFrame(MainController mainController, String name, int x, int y, int width, int height) {
         this.mainController = mainController;
 
-        this.interactionPanel = new InteractionPanelHandler(mainController).getPanel();
+        this.interactionPanel = new InteractionPanelHandler(mainController);
 
-        this.getContentPane().add(interactionPanel);
+        this.getContentPane().add(interactionPanel.getPanel());
 
         this.setLocation(x,y);
         this.setSize(width,height);
@@ -37,5 +37,9 @@ public class MainFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setVisible(true);
+    }
+
+    public InteractionPanelHandler getInteractionPanelHandler() {
+        return interactionPanel;
     }
 }
